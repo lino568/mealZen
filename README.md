@@ -1,5 +1,5 @@
 # MealZen
-## Planification hebdomadaire des repas avec recettes et liste de courses
+Planification hebdomadaire des repas avec recettes et liste de courses
 
 # Technologies
 - [React](https://fr.react.dev/)
