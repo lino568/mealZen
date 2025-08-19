@@ -1,3 +1,7 @@
+<?php
+
+use Illuminate\Support\Facades\Hash;
+?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
