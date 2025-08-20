@@ -11,24 +11,21 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const { login } = useAuth();
+  const [errorMessageStyle, setErrorMessageStyle] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      console.log({email, password});
-      
       const response = await loginAPI(email, password);
-
-      console.log(response);
 
       if (response.status === 200 && response.data.token) {
 
         login(response.data);
         window.location.href = "/dashboard";
-      }
+      } 
     } catch (error) {
-      alert("Erreur de connexion");
+      setErrorMessageStyle(true);
     }
   }
 
@@ -50,7 +47,7 @@ function LoginForm() {
 
       <h1>Connexion</h1>
 
-      <div className="error-message" id="errorMessage">
+      <div className="error-message" style={{display: errorMessageStyle ? "block" : "none"}} id="errorMessage">
         Email ou mot de passe incorrect
       </div>
 
